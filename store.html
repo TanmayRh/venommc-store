@@ -151,7 +151,7 @@
                         </a>
                     </div>
                 </div>
-                                  <!-- STORE VIEW: RANKS -->
+                                                    <!-- STORE VIEW: RANKS -->
                   <div id="view-ranks" class="store-view" style="display: none;">
                       <div class="view-header">
                           <button class="back-btn" onclick="switchView('home')">&larr; Back to Categories</button>
@@ -160,38 +160,48 @@
                       </div>
                       <div class="products-grid">
                           <div class="product-card">
-                              <div class="product-icon"><img src="rank_icon.jpg" alt="Captain"></div>
-                              <h4 class="product-title">CAPTAIN</h4>
+                              <div class="product-icon"><img src="rank_icon.jpg" alt="Premium"></div>
+                              <h4 class="product-title">PREMIUM</h4>
+                              <div class="product-price">&#8377;50</div>
+                              <ul class="product-features">
+                                  <li>&check; Premium Chat Tag</li>
+                                  <li>&check; Access to Premium Kits</li>
+                              </ul>
+                              <button class="buy-btn" onclick="addToCart('PREMIUM', 50)">BUY NOW</button>
+                          </div>
+                          <div class="product-card">
+                              <div class="product-icon"><img src="rank_icon.jpg" alt="Beam"></div>
+                              <h4 class="product-title">BEAM</h4>
+                              <div class="product-price">&#8377;99</div>
+                              <ul class="product-features">
+                                  <li>&check; Beam Chat Tag</li>
+                                  <li>&check; Access to Beam Kits</li>
+                                  <li>&check; /feed command</li>
+                              </ul>
+                              <button class="buy-btn" onclick="addToCart('BEAM', 99)">BUY NOW</button>
+                          </div>
+                          <div class="product-card">
+                              <div class="product-icon"><img src="rank_icon.jpg" alt="Captain+"></div>
+                              <h4 class="product-title">CAPTAIN+</h4>
                               <div class="product-price">&#8377;220</div>
                               <ul class="product-features">
                                   <li>&check; Exclusive Chat Tag</li>
                                   <li>&check; Access to Captain Kits</li>
                                   <li>&check; No chat cooldown</li>
                               </ul>
-                              <button class="buy-btn" onclick="addToCart('CAPTAIN', 220)">BUY NOW</button>
-                          </div>
-                          <div class="product-card">
-                              <div class="product-icon"><img src="rank_icon.jpg" alt="Monarch"></div>
-                              <h4 class="product-title">MONARCH</h4>
-                              <div class="product-price">&#8377;320</div>
-                              <ul class="product-features">
-                                  <li>&check; Everything from Captain</li>
-                                  <li>&check; Access to /fly in hub</li>
-                                  <li>&check; 2x Vote Rewards</li>
-                              </ul>
-                              <button class="buy-btn" onclick="addToCart('MONARCH', 320)">BUY NOW</button>
+                              <button class="buy-btn" onclick="addToCart('CAPTAIN+', 220)">BUY NOW</button>
                           </div>
                           <div class="product-card featured-card">
                               <div class="product-badge accent-badge">POPULAR</div>
-                              <div class="product-icon"><img src="rank_icon.jpg" alt="Dictator+"></div>
-                              <h4 class="product-title">DICTATOR+</h4>
+                              <div class="product-icon"><img src="rank_icon.jpg" alt="MVP+"></div>
+                              <h4 class="product-title">MVP+</h4>
                               <div class="product-price">&#8377;420 <span class="old-price">&#8377;500</span></div>
                               <ul class="product-features">
                                   <li>&check; Colored Chat Messages</li>
                                   <li>&check; Keep Inventory on death</li>
                                   <li>&check; 5 /sethome locations</li>
                               </ul>
-                              <button class="buy-btn accent-btn" onclick="addToCart('DICTATOR+', 420)">BUY NOW</button>
+                              <button class="buy-btn accent-btn" onclick="addToCart('MVP+', 420)">BUY NOW</button>
                           </div>
                           <div class="product-card legendary-card">
                               <div class="product-badge legendary-badge">TOP TIER</div>
@@ -208,7 +218,7 @@
                           </div>
                       </div>
                   </div>
-                                  <!-- STORE VIEW: CRATES -->
+                                                    <!-- STORE VIEW: CRATES -->
                   <div id="view-crates" class="store-view" style="display: none;">
                       <div class="view-header">
                           <button class="back-btn" onclick="switchView('home')">&larr; Back to Categories</button>
@@ -216,52 +226,47 @@
                           <p class="view-subtitle">Try your luck! Open crates at spawn for a chance to win legendary items.</p>
                       </div>
                       <div class="products-grid">
-                          <div class="product-card">
-                              <div class="product-icon"><img src="crate_icon.jpg" alt="Crate"></div>
+                          <div class="product-card featured-card">
+                              <div class="product-badge accent-badge">SEASONAL</div>
+                              <div class="product-icon"><img src="crate_icon.jpg" alt="Monthly Crate"></div>
                               <h4 class="product-title">MONTHLY CRATE KEY</h4>
-                              <div class="product-price">&#8377;40</div>
+                              <div class="product-price">&#8377;50</div>
                               <ul class="product-features">
                                   <li>&check; 1x Monthly Crate Key</li>
-                                  <li>&check; Win exclusive seasonal gear</li>
+                                  <li>&check; Win exclusive seasonal gear & loot</li>
                               </ul>
-                              <button class="buy-btn" onclick="addToCart('MONTHLY CRATE KEY 1x', 40)">BUY NOW</button>
+                              <button class="buy-btn accent-btn" onclick="addToCart('MONTHLY CRATE KEY 1x', 50)">BUY NOW</button>
                           </div>
-                          <div class="product-card">
-                              <div class="product-icon"><img src="crate_icon.jpg" alt="Crate"></div>
+                          <div class="product-card featured-card">
+                              <div class="product-badge accent-badge">SPECIAL</div>
+                              <div class="product-icon"><img src="crate_icon.jpg" alt="Special Crate"></div>
                               <h4 class="product-title">SPECIAL CRATE KEY</h4>
-                              <div class="product-price">&#8377;40</div>
+                              <div class="product-price">&#8377;50</div>
                               <ul class="product-features">
                                   <li>&check; 1x Special Crate Key</li>
-                                  <li>&check; High chance for rare enchants</li>
+                                  <li>&check; High chance for rare enchants & items</li>
                               </ul>
-                              <button class="buy-btn" onclick="addToCart('SPECIAL CRATE KEY 1x', 40)">BUY NOW</button>
+                              <button class="buy-btn accent-btn" onclick="addToCart('SPECIAL CRATE KEY 1x', 50)">BUY NOW</button>
                           </div>
                           <div class="product-card">
-                              <div class="product-icon"><img src="crate_icon.jpg" alt="Crate"></div>
-                              <h4 class="product-title">VOTE CRATE KEY</h4>
+                              <div class="product-icon"><img src="crate_icon.jpg" alt="Arcane Crate"></div>
+                              <h4 class="product-title">ARCANE CRATE KEY</h4>
                               <div class="product-price">&#8377;20</div>
                               <ul class="product-features">
-                                  <li>&check; 1x Vote Crate Key</li>
+                                  <li>&check; 1x Arcane Crate Key</li>
+                                  <li>&check; Mystic rewards and boosts</li>
                               </ul>
-                              <button class="buy-btn" onclick="addToCart('VOTE CRATE KEY 1x', 20)">BUY NOW</button>
+                              <button class="buy-btn" onclick="addToCart('ARCANE CRATE KEY 1x', 20)">BUY NOW</button>
                           </div>
                           <div class="product-card">
-                              <div class="product-icon"><img src="crate_icon.jpg" alt="Crate"></div>
-                              <h4 class="product-title">RARE CRATE KEY</h4>
+                              <div class="product-icon"><img src="crate_icon.jpg" alt="Matrix Crate"></div>
+                              <h4 class="product-title">MATRIX CRATE KEY</h4>
                               <div class="product-price">&#8377;20</div>
                               <ul class="product-features">
-                                  <li>&check; 1x Rare Crate Key</li>
+                                  <li>&check; 1x Matrix Crate Key</li>
+                                  <li>&check; Futuristic gear and valuable tools</li>
                               </ul>
-                              <button class="buy-btn" onclick="addToCart('RARE CRATE KEY 1x', 20)">BUY NOW</button>
-                          </div>
-                          <div class="product-card">
-                              <div class="product-icon"><img src="crate_icon.jpg" alt="Crate"></div>
-                              <h4 class="product-title">LEGENDARY CRATE KEY</h4>
-                              <div class="product-price">&#8377;20</div>
-                              <ul class="product-features">
-                                  <li>&check; 1x Legendary Crate Key</li>
-                              </ul>
-                              <button class="buy-btn" onclick="addToCart('LEGENDARY CRATE KEY 1x', 20)">BUY NOW</button>
+                              <button class="buy-btn" onclick="addToCart('MATRIX CRATE KEY 1x', 20)">BUY NOW</button>
                           </div>
                       </div>
                   </div>
