@@ -85,7 +85,7 @@ function switchView(viewName, clickedElement = null) {
     // Show target view
     const targetView = document.getElementById(`view-${viewName}`);
     if (targetView) {
-        targetView.style.display = 'block';
+        targetView.style.display = 'block'; window.scrollTo({ top: 100, behavior: 'smooth' });
         setTimeout(() => targetView.classList.add('active'), 10);
     }
     // Full screen category logic
@@ -451,12 +451,12 @@ function selectPaymentMethod(method) {
     
     // Reset UI
     ['card', 'gpay', 'paypal', 'upi', 'nepali', 'crypto'].forEach(m => {
-        const el = document.getElementById(pm- + m);
+        const el = document.getElementById('pm-' + m);
         if (el) el.classList.remove('selected');
     });
     
     if (method) {
-        const el = document.getElementById(pm- + method);
+        const el = document.getElementById('pm-' + method);
         if (el) el.classList.add('selected');
     }
     
@@ -464,28 +464,28 @@ function selectPaymentMethod(method) {
     const form = document.getElementById('payment-dynamic-form');
     if (form) {
         if (method === 'upi') {
-            form.innerHTML = 
+            form.innerHTML = `
                 <div style="background: rgba(76, 175, 80, 0.1); border: 1px solid rgba(76, 175, 80, 0.3); padding: 20px; border-radius: 8px; text-align: center;">
                     <div style="color: #4CAF50; font-weight: 800; font-size: 16px; margin-bottom: 8px;">UPI Selected</div>
-                    <div style="color: var(--text-muted); font-size: 14px;">Click "Complete Payment" below to generate your secure QR code for FamPay/UPI.</div>
+                    <div style="color: var(--text-muted); font-size: 14px;">Click \"Complete Payment\" below to generate your secure QR code for FamPay/UPI.</div>
                 </div>
-            ;
+            `;
         } else if (method === 'nepali') {
-            form.innerHTML = 
+            form.innerHTML = `
                 <div style="background: rgba(255, 152, 0, 0.1); border: 1px solid rgba(255, 152, 0, 0.3); padding: 20px; border-radius: 8px; text-align: center;">
                     <div style="color: #FF9800; font-weight: 800; font-size: 16px; margin-bottom: 8px;">Nepali Payment Selected</div>
-                    <div style="color: var(--text-muted); font-size: 14px;">Click "Complete Payment" to view the QR Code.</div>
+                    <div style="color: var(--text-muted); font-size: 14px;">Click \"Complete Payment\" to view the QR Code.</div>
                 </div>
-            ;
+            `;
         } else if (method === 'crypto') {
-            form.innerHTML = 
+            form.innerHTML = `
                 <div style="background: rgba(33, 150, 243, 0.1); border: 1px solid rgba(33, 150, 243, 0.3); padding: 20px; border-radius: 8px; text-align: center;">
                     <div style="color: #2196F3; font-weight: 800; font-size: 16px; margin-bottom: 8px;">Crypto Selected</div>
-                    <div style="color: var(--text-muted); font-size: 14px;">Click "Complete Payment" for the wallet address details.</div>
+                    <div style="color: var(--text-muted); font-size: 14px;">Click \"Complete Payment\" for the wallet address details.</div>
                 </div>
-            ;
+            `;
         } else {
-            form.innerHTML = 
+            form.innerHTML = `
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
                     <div>
                         <div style="color: white; font-weight: 700; margin-bottom: 10px;">Full Name</div>
@@ -496,7 +496,7 @@ function selectPaymentMethod(method) {
                         <input type="text" placeholder="Zip code" class="payment-input">
                     </div>
                 </div>
-            ;
+            `;
         }
     }
 }
@@ -512,13 +512,11 @@ function executePayment() {
         closePaymentModal();
         
         let methodTitle = "PAYMENT";
-        let qrSrc = "https://fam.cash/pay"; // Placeholder for upi
+        let qrSrc = "https://fam.cash/pay";
         let textInstruction = "Scan the QR code above with your app.";
         
         if (selectedPaymentMethod === 'upi') {
             methodTitle = "UPI / FAMPAY";
-            qrSrc = "fam_qr.png"; // Original fampay image or placeholder
-            // Let's fallback to api for upi if fam_qr doesn't exist
             qrSrc = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=upi://pay?pa=venom@upi&am=" + total;
         } else if (selectedPaymentMethod === 'nepali') {
             methodTitle = "NEPALI PAYMENT";
@@ -530,24 +528,21 @@ function executePayment() {
             textInstruction = "Send the exact amount in crypto to our wallet (BTC/LTC/ETH). Wallet Address: 0x1234...5678";
         }
         
-        // Re-use the checkout modal but inject our info dynamically
         const modal = document.getElementById('checkout-modal');
         if (modal) {
-            // Update title
             const titleEl = modal.querySelector('h2');
             if (titleEl) titleEl.innerText = methodTitle;
             
-            // Update QR code Image
             const qrEl = modal.querySelector('img.qr-code');
             if (qrEl) qrEl.src = qrSrc;
             
-            // Update instruction text
             const instructionEls = modal.querySelectorAll('.modal-instruction');
             if (instructionEls.length > 0) {
                 instructionEls[0].innerText = textInstruction;
             }
             if (instructionEls.length > 1) {
-                instructionEls[1].innerHTML = `After paying, take a screenshot of your successful transaction. Join our official Discord server and open a support ticket mentioning your username: <strong style='color:var(--color-accent)'>$username</strong> with your screenshot to instantly claim your rewards!<br><br><a href='https://discord.gg/KCAyPgyaUP' target='_blank' style='color: #FFD700; text-decoration: underline;'>Click here to join our Discord!</a>`; text-decoration: underline;">Click here to join our Discord!</a>;
+                const userTag = username ? username : 'YourUsername';
+                instructionEls[1].innerHTML = 'After paying, take a screenshot of your successful transaction. Join our official Discord server and open a support ticket mentioning your username: <strong style="color:var(--color-accent)">' + userTag + '</strong> with your screenshot to instantly claim your rewards!<br><br><a href="https://discord.gg/KCAyPgyaUP" target="_blank" style="color: #FFD700; text-decoration: underline;">Click here to join our Discord!</a>';
             }
             
             modal.style.display = 'flex';

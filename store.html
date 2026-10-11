@@ -129,6 +129,16 @@
                                 <img src="crate_icon.jpg" alt="Crates" style="width: 72px; height: 72px; object-fit: contain; image-rendering: pixelated; margin: 0 auto; display: block; filter: drop-shadow(0 6px 12px rgba(0,0,0,0.6));">
                             </div>
                         </a>
+                                                <!-- Category: Coins -->
+                        <a href="#" onclick="switchView('coins'); return false;" class="category-card">
+                            <div class="category-text">
+                                <h4 class="category-title">COINS</h4>
+                                <span class="category-subtitle">Click to view</span>
+                            </div>
+                            <div class="category-image">
+                                <img src="coin_icon.png" alt="Coins" style="width: 72px; height: 72px; object-fit: contain; image-rendering: pixelated; margin: 0 auto; display: block; filter: drop-shadow(0 6px 12px rgba(0,0,0,0.6));">
+                            </div>
+                        </a>
                         <!-- Category: Bundles -->
                         <a href="#" onclick="switchView('bundles'); return false;" class="category-card">
                             <div class="category-text">
@@ -270,7 +280,90 @@
                           </div>
                       </div>
                   </div>
-                <!-- STORE VIEW: BUNDLES -->
+                                                    <!-- STORE VIEW: COINS -->
+                  <div id="view-coins" class="store-view" style="display: none;">
+                      <div class="view-header">
+                          <button class="back-btn" onclick="switchView('home')">&larr; Back to Categories</button>
+                          <h3>Venom Coins & Currency</h3>
+                          <p class="view-subtitle">Top up your server balance to buy gear, auction house items, and raid supplies.</p>
+                      </div>
+                      <div class="products-grid">
+                          <div class="product-card">
+                              <div class="product-icon"><img src="coin_icon.png" alt="Coins"></div>
+                              <h4 class="product-title">250 COINS</h4>
+                              <div class="product-price">&#8377;50</div>
+                              <ul class="product-features">
+                                  <li>&check; 250 In-Game Coins</li>
+                                  <li>&check; Instant delivery to balance</li>
+                              </ul>
+                              <button class="buy-btn" onclick="addToCart('250 COINS', 50)">BUY NOW</button>
+                          </div>
+                          <div class="product-card">
+                              <div class="product-icon"><img src="coin_icon.png" alt="Coins"></div>
+                              <h4 class="product-title">500 COINS</h4>
+                              <div class="product-price">&#8377;100</div>
+                              <ul class="product-features">
+                                  <li>&check; 500 In-Game Coins</li>
+                                  <li>&check; Instant delivery to balance</li>
+                              </ul>
+                              <button class="buy-btn" onclick="addToCart('500 COINS', 100)">BUY NOW</button>
+                          </div>
+                          <div class="product-card">
+                              <div class="product-icon"><img src="coin_icon.png" alt="Coins"></div>
+                              <h4 class="product-title">1,000 COINS</h4>
+                              <div class="product-price">&#8377;200</div>
+                              <ul class="product-features">
+                                  <li>&check; 1,000 In-Game Coins</li>
+                                  <li>&check; Great for auction house snipes</li>
+                              </ul>
+                              <button class="buy-btn" onclick="addToCart('1,000 COINS', 200)">BUY NOW</button>
+                          </div>
+                          <div class="product-card featured-card">
+                              <div class="product-badge accent-badge">POPULAR</div>
+                              <div class="product-icon"><img src="coin_icon.png" alt="Coins"></div>
+                              <h4 class="product-title">5,000 COINS</h4>
+                              <div class="product-price">&#8377;400</div>
+                              <ul class="product-features">
+                                  <li>&check; 5,000 In-Game Coins</li>
+                                  <li>&check; Stack your gear & supplies</li>
+                              </ul>
+                              <button class="buy-btn accent-btn" onclick="addToCart('5,000 COINS', 400)">BUY NOW</button>
+                          </div>
+                          <div class="product-card">
+                              <div class="product-icon"><img src="coin_icon.png" alt="Coins"></div>
+                              <h4 class="product-title">10,000 COINS</h4>
+                              <div class="product-price">&#8377;700</div>
+                              <ul class="product-features">
+                                  <li>&check; 10,000 In-Game Coins</li>
+                                  <li>&check; Dominate the server economy</li>
+                              </ul>
+                              <button class="buy-btn" onclick="addToCart('10,000 COINS', 700)">BUY NOW</button>
+                          </div>
+                          <div class="product-card">
+                              <div class="product-icon"><img src="coin_icon.png" alt="Coins"></div>
+                              <h4 class="product-title">15,000 COINS</h4>
+                              <div class="product-price">&#8377;800</div>
+                              <ul class="product-features">
+                                  <li>&check; 15,000 In-Game Coins</li>
+                                  <li>&check; Major savings per coin</li>
+                              </ul>
+                              <button class="buy-btn" onclick="addToCart('15,000 COINS', 800)">BUY NOW</button>
+                          </div>
+                          <div class="product-card legendary-card">
+                              <div class="product-badge legendary-badge">BEST VALUE</div>
+                              <div class="product-icon"><img src="coin_icon.png" alt="Coins"></div>
+                              <h4 class="product-title">30,000 COINS</h4>
+                              <div class="product-price">&#8377;1,500</div>
+                              <ul class="product-features">
+                                  <li>&check; 30,000 In-Game Coins</li>
+                                  <li>&check; Maximum coin pack</li>
+                                  <li>&check; Unlimited server wealth</li>
+                              </ul>
+                              <button class="buy-btn legendary-btn" onclick="addToCart('30,000 COINS', 1500)">BUY NOW</button>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- STORE VIEW: BUNDLES -->
                 <div id="view-bundles" class="store-view" style="display: none;">
                     <div class="view-header">
                         <button class="back-btn" onclick="switchView('home')">← Back to Categories</button>
