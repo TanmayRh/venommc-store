@@ -1,6 +1,6 @@
 // Copy IP Function
 function copyIP() {
-    const ip = "play.Venom MC.fun";
+    const ip = "play.venommc.fun";
     navigator.clipboard.writeText(ip).then(() => {
         const ipText = document.getElementById("ip-text");
         const originalText = ipText.innerText;
@@ -21,8 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
     
     async function fetchPlayerCount() {
         try {
-            // NOTE: Replace play.Venom MC.fun with your actual server IP
-            const response = await fetch("https://api.mcsrvstat.us/2/play.Venom MC.fun");
+            // NOTE: Replace play.venommc.fun with your actual server IP
+            const response = await fetch("https://api.mcsrvstat.us/2/play.venommc.fun");
             const data = await response.json();
             
             if (data.online) {
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     async function fetchDiscordCount() {
         try {
             // NOTE: Make sure widget is enabled in your discord server settings
-            const inviteCode = "jcXgZEC8Qb";
+            const inviteCode = "KCAyPgyaUP";
             const response = await fetch(`https://discord.com/api/v9/invites/${inviteCode}?with_counts=true`);
             const data = await response.json();
             
