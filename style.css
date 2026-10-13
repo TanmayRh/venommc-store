@@ -1330,3 +1330,123 @@ a.sidebar-widget:hover {
 .hero-logo-img { max-width: 150px; display: block; margin: 0 auto; }
 
 
+
+
+/* ==========================================
+   PAYMENT GATEWAY MODAL (RESPONSIVE)
+   ========================================== */
+.payment-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    max-width: 1400px;
+    margin: 0 auto;
+    background: #140c22;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+}
+
+.payment-sidebar {
+    width: 380px;
+    flex-shrink: 0;
+    background: #11091c;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-main {
+    flex-grow: 1;
+    padding: 40px 60px;
+    overflow-y: auto;
+    background: #140c22;
+}
+
+.payment-methods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.payment-method-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 16px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.payment-method-box:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.payment-method-box.selected {
+    background: rgba(250, 204, 21, 0.1) !important;
+    border-color: #facc15 !important;
+    box-shadow: 0 0 15px rgba(250, 204, 21, 0.2);
+}
+
+/* Mobile & Tablet Responsiveness for Payment Gateway */
+@media (max-width: 850px) {
+    .payment-container {
+        flex-direction: column !important;
+        height: 100vh !important;
+        width: 100vw !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .payment-sidebar {
+        width: 100% !important;
+        flex-shrink: 0 !important;
+        padding: 20px 20px 15px 20px !important;
+        border-right: none !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    }
+
+    .payment-sidebar .payment-order-header {
+        margin-bottom: 15px !important;
+    }
+
+    .payment-sidebar #payment-items-container {
+        max-height: 120px !important;
+        overflow-y: auto !important;
+    }
+
+    .payment-sidebar .coupon-container {
+        display: none !important;
+    }
+
+    .payment-main {
+        width: 100% !important;
+        padding: 20px !important;
+        overflow-y: visible !important;
+    }
+
+    .payment-main .breadcrumb-text {
+        display: none !important;
+    }
+
+    .payment-methods-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+
+    .payment-method-box {
+        padding: 12px 10px !important;
+    }
+
+    #execute-payment-btn {
+        width: 100% !important;
+        padding: 16px !important;
+        font-size: 16px !important;
+    }
+}

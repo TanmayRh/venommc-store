@@ -466,7 +466,7 @@ function selectPaymentMethod(method) {
         if (method === 'upi') {
             form.innerHTML = `<div style="background: rgba(76, 175, 80, 0.1); border: 1px solid rgba(76, 175, 80, 0.3); padding: 20px; border-radius: 8px; text-align: center;"><div style="color: #4CAF55; font-weight: 800; font-size: 16px; margin-bottom: 8px;">UPI / FamPay Selected</div><div style="color: var(--text-muted); font-size: 14px;">UPI ID: <strong>ajiteshr@fampay</strong></div><div style="color: var(--text-muted); font-size: 13px; margin-top: 5px;">Click \"Complete Payment\" below to generate your dynamic QR code for FamPay, GPay, PhonePe & Paytm.</div></div>`;
         } else if (method === 'nepali') {
-            form.innerHTML = `<div style="background: rgba(255, 152, 0, 0.1); border: 1px solid rgba(255, 152, 0, 0.3); padding: 20px; border-radius: 8px; text-align: center;"><div style="color: #FF9800; font-weight: 800; font-size: 16px; margin-bottom: 8px;">Nepali Payment Selected (eSewa)</div><div style="color: var(--text-muted); font-size: 14px;">Recipient: <strong>Pratik Bibas K.C</strong> &bull; eSewa ID: <strong>9849703449</strong></div><div style="color: var(--text-muted); font-size: 13px; margin-top: 5px;">Click \"Complete Payment\" below to scan the official eSewa QR Code.</div></div>`;
+            form.innerHTML = `<div style="background: rgba(255, 152, 0, 0.1); border: 1px solid rgba(255, 152, 0, 0.3); padding: 20px; border-radius: 8px; text-align: center;"><div style="color: #FF9800; font-weight: 800; font-size: 16px; margin-bottom: 8px;">Nepali Payment Selected (eSewa)</div><div style="color: var(--text-muted); font-size: 14px;">eSewa ID: <strong>9849703449</strong></div><div style="color: var(--text-muted); font-size: 13px; margin-top: 5px;">Click \"Complete Payment\" below to scan the official eSewa QR Code.</div></div>`;
         } else if (method === 'crypto') {
             form.innerHTML = `<div style="background: rgba(33, 150, 243, 0.1); border: 1px solid rgba(33, 150, 243, 0.3); padding: 20px; border-radius: 8px; text-align: center;"><div style="color: #2196F3; font-weight: 800; font-size: 16px; margin-bottom: 8px;">Crypto Selected (LTC / USDT / BTC)</div><div style="color: var(--text-muted); font-size: 14px;">Click \"Complete Payment\" to view details & open a Discord ticket.</div></div>`;
         } else {
@@ -527,10 +527,10 @@ function executePayment() {
             }
             
             if (instructionEls.length > 0) {
-                instructionEls[0].innerHTML = 'Scan this QR Code using your <strong>eSewa App</strong> to transfer directly to <strong>Pratik Bibas K.C</strong>';
+                instructionEls[0].innerHTML = 'Scan this QR Code using your <strong>eSewa App</strong> or transfer to eSewa ID: <strong>9849703449</strong>:';
             }
             if (upiBox) {
-                upiBox.innerHTML = '<span>eSewa ID: <strong id="upi-id-text">9849703449</strong> (Pratik Bibas K.C)</span><button class="copy-small-btn" onclick="copyUPI(this)">COPY</button>';
+                upiBox.innerHTML = '<span>eSewa ID: <strong id="upi-id-text">9849703449</strong></span><button class="copy-small-btn" onclick="copyUPI(this)">COPY ID</button>';
             }
         } else if (selectedPaymentMethod === 'crypto') {
             if (tagEl) tagEl.innerText = "MANUAL CHECKOUT - CRYPTO (LTC / USDT / BTC)";
